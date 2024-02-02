@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<div class="container">
+  <h2><kbd>  Image Gallery</kbd></h2>
+
+  <!-- <tbody> -->
+  {% for row in datas %}
+  <!-- <table> -->
+        <!-- <tr> -->
+          <!-- <div class="row"> -->
+            <div class="col-md-3">
+              <div class="thumbnail">
+                <a href="static/imgs/{{row.1}}" target="_self">
+                  <img src="static/imgs/{{
+                    row.1}}" alt="Lights" style="width:80%">
+                  <div class="caption">
+                    <p>{{row.3}}</p>
+                  </div>
+                </a>
+              </div>
+            </div>
+        <!-- </tr> -->
+      <!-- </table> -->
+
+      {% endfor %}
+    
+</div>
+    <td>
+
+        <a href="{{ url_for('refresh') }}" class="btn btn-success" onclick="">Refresh Page</a>
+
+    </td>
+</div>
+{% endblock %}

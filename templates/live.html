@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+{% block body %}
+<head>
+  <title>RTSP web streaming</title>
+</head>
+<!-- <style>
+  .div1 {
+    margin-left: 100px;
+    margin-top: 60px;
+  }
+  .div2 {
+      margin-left: 80px;
+      margin-top: 50px;
+    }
+    </style> -->
+    <!-- <div class="col-md-9"> -->
+  <div class="col-md-12">
+    <div class="thumbnail">
+      <div class="caption">
+        <p><kbd class="label-danger">LIVE</kbd></p>
+      </div>
+        <img src="{{ url_for('video_feed') }}" alt="Lights" style="width:80%">
+        <div class="caption">
+          <br>
+          <p>IP Camera</p>
+        </div>
+    </div>
+  </div>
+  <!-- </div> -->
+
+  <!-- <div class="div2"><h1 align="center";>LIVE</h1></div> -->
+  <!-- <div class="container"> -->
+    <!-- <div class="div1"> -->
+        <!-- <img src="{{ url_for('video_feed') }}" width="100%"/> -->
+    <!-- </div> -->
+  <!-- </div> -->
+    
+{% endblock %}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{{url_for('static', filename = 'css/bootstrap.min.css')}}" rel="stylesheet">
+    <title>Document</title>
+</head>
+<style>
+    .div1 {
+      margin: 60px;
+    }
+    </style>
+<body>
+
+<div class="div1">
+    <h1 align="center";></h1>
+    <h1 align="center";>การจัดการรูปภาพ</h1>
+     <!-- <div class="card-body">
+    </div>  -->
+
+    <div class="card-body">
+    </div> 
+    <table class="table table-bordered">
+        <thead>
+          <tr>
+            <td align="center"> <strong>images</strong></td>
+            <td align="center"> <strong>imageName</strong></td>
+            <td align="center"> <strong>ปี/เดือน/วัน/เวลา</strong></td>
+          </tr>
+        </thead>
+        <tbody>
+        {% for row in datas %}
+          <tr>
+            <td align="center"><img src="static/imgs/{{row.1}}" width="150" height="100"></td>
+            <td align="center">{{row.1}}</td>
+            <td align="center">{{row.3}}</td>
+            <!-- <td>
+              <a href="" class="btn btn-warning btn-xs" data-toggle="modal" data-target="#modaledit{{row.1}}">Edit</a>
+              <a href="/delete/{{ row.0 }}" class="btn btn-danger btn-xs" onclick="">Delete</a>
+            </td> -->
+          </tr>
+        {% endfor %}
+        </tbody>
+      </table>
+      <td>
+
+          <a href="{{ url_for('refresh') }}" class="btn btn-success" onclick="">Refresh Page</a>
+
+      </td>
+</div>
+</body>
+</html>

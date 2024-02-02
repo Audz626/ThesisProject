@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <title>Automatic Camera and Face Detection System</title>
+
+  <style>
+    body {
+  background-color: #dcdcdc;
+}
+  
+  .navbar {
+  background: #044E1D;
+}
+
+  </style>
+</head>
+<body>
+    <header>
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="{{url_for('live')}}"><dt><span class="glyphicon glyphicon-cloud"></span> Security</dt></a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li><a href="{{url_for('live')}}"><span class="glyphicon glyphicon-facetime-video"></span> LIVE </a></li>
+          <li><a href="{{url_for('backward')}}"><span class="glyphicon glyphicon-film"></span> PLAYBACK </a></li>
+          <li><a href="{{url_for('images')}}"><span class="glyphicon glyphicon-picture"></span> IMAGE </a></li>
+          <li><a href="{{url_for('showdataid')}}"><span class="	glyphicon glyphicon-edit"></span> MANAGE USER </a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="{{url_for('logout')}}"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+    
+    <!-- old ver #dcdcdc --> 
+      <main>
+        {% block body %}
+        {% endblock %}
+      </main>
+</body>
+</html>

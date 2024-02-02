@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<div class="container">
+  <h2><kbd>Video Gallery</kbd></h2>
+
+  <!-- <tbody> -->
+  {% for row in vdo %}
+  <!-- <table> -->
+        <!-- <tr> -->
+          <!-- <div class="row"> -->
+            <div class="col-md-3">
+              <div class="thumbnail">
+                <a href="static/VDO/{{row.1}}" target="_top">
+                  <a src="static/VDO/{{row.1}}" style="width:80%">
+                  <video controls src="static/VDO/{{row.1}}" width="100%" ></video>
+                  <div class="caption">
+                    <p>{{row.3}}</p>
+                  </div>
+                </a>
+              </div>
+            </div>
+        <!-- </tr> -->
+      <!-- </table> -->
+
+      {% endfor %}
+    
+</div>
+    <td>
+
+        <a href="{{ url_for('refresh') }}" class="btn btn-success" onclick="">Refresh Page</a>
+
+    </td>
+</div>
+<!-- <input type="button" value="Refresh Button" onClick="window.location.reload()">  -->
+    <!-- <h1>Test Backward</h1>
+    <h2>Serving video files from Flask template</h2>
+    <video controls src="static/VDO/backward.mp4" width="600" > -->
+{% endblock %}

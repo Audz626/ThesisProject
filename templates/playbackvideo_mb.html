@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>Playback Video</title>
+
+    <style>
+      body {
+    background-color: #a2a2a2;
+  }
+    
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2><kbd>Video Gallery</kbd></h2>
+      
+        <!-- <tbody> -->
+        {% for row in vdo %}
+        <!-- <table> -->
+              <!-- <tr> -->
+                <!-- <div class="row"> -->
+                  <div class="col-md-3">
+                    <div class="thumbnail">
+                      <a href="static/VDO/{{row.1}}" target="_top">
+                        <a src="static/VDO/{{row.1}}" style="width:80%">
+                        <video controls src="static/VDO/{{row.1}}" width="100%" ></video>
+                        <div class="caption">
+                          <p>{{row.3}}</p>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+              <!-- </tr> -->
+            <!-- </table> -->
+      
+            {% endfor %}
+          
+      </div>
+          <td>
+      
+              <a href="{{ url_for('refresh') }}" class="btn btn-success" onclick="">Refresh Page</a>
+      
+          </td>
+      </div>
+      
+</body>
+</html>
